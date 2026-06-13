@@ -1,0 +1,713 @@
+/* ==================================================
+   EMS PRO - DARK BLUE CORPORATE THEME
+   Blue + Black + Gray + Office Background
+================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#020617;
+    color:#ffffff;
+    overflow-x:hidden;
+}
+
+/* ==================================================
+   ANIMATED BACKGROUND WITH OFFICE IMAGE
+================================================== */
+
+.background{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-1;
+
+    background:
+    linear-gradient(
+        rgba(2,6,23,0.88),
+        rgba(15,23,42,0.88)
+    ),
+    url("images/office-bg.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    overflow:hidden;
+}
+
+/* Blue Glow */
+
+.background::before{
+    content:"";
+
+    position:absolute;
+
+    width:800px;
+    height:800px;
+
+    background:#2563eb;
+
+    border-radius:50%;
+
+    filter:blur(180px);
+
+    opacity:.25;
+
+    top:-250px;
+    left:-250px;
+
+    animation:blueGlow 18s ease-in-out infinite alternate;
+}
+
+/* Cyan Glow */
+
+.background::after{
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    background:#0ea5e9;
+
+    border-radius:50%;
+
+    filter:blur(180px);
+
+    opacity:.18;
+
+    bottom:-250px;
+    right:-250px;
+
+    animation:cyanGlow 20s ease-in-out infinite alternate;
+}
+
+@keyframes blueGlow{
+
+    from{
+        transform:
+        translate(0,0)
+        scale(1);
+    }
+
+    to{
+        transform:
+        translate(300px,250px)
+        scale(1.3);
+    }
+}
+
+@keyframes cyanGlow{
+
+    from{
+        transform:
+        translate(0,0)
+        scale(1);
+    }
+
+    to{
+        transform:
+        translate(-300px,-250px)
+        scale(1.4);
+    }
+}
+
+/* ==================================================
+   NAVBAR
+================================================== */
+
+.navbar{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:25px 8%;
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    backdrop-filter:blur(20px);
+
+    background:rgba(0,0,0,0.25);
+
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.logo{
+
+    font-size:32px;
+    font-weight:800;
+    color:white;
+}
+
+.logo span{
+    color:#38bdf8;
+}
+
+.nav-links{
+
+    display:flex;
+    gap:35px;
+    list-style:none;
+}
+
+.nav-links a{
+
+    text-decoration:none;
+    color:white;
+
+    font-weight:500;
+
+    transition:.3s;
+}
+
+.nav-links a:hover{
+
+    color:#38bdf8;
+}
+
+.login-btn{
+
+    text-decoration:none;
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:12px 28px;
+
+    border-radius:12px;
+
+    transition:.3s;
+}
+
+.login-btn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-3px);
+}
+
+/* ==================================================
+   HERO SECTION
+================================================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:80px;
+
+    padding:0 8%;
+}
+
+.hero-left{
+
+    flex:1;
+}
+
+.badge{
+
+    display:inline-block;
+
+    padding:10px 20px;
+
+    border-radius:50px;
+
+    background:rgba(37,99,235,.15);
+
+    border:1px solid rgba(56,189,248,.3);
+
+    color:#38bdf8;
+
+    margin-bottom:25px;
+}
+
+.hero-left h1{
+
+    font-size:72px;
+
+    line-height:1.1;
+
+    margin-bottom:25px;
+}
+
+.hero-left p{
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    color:#cbd5e1;
+
+    max-width:650px;
+}
+
+.hero-buttons{
+
+    margin-top:40px;
+}
+
+.primary-btn{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:16px 35px;
+
+    border-radius:12px;
+
+    margin-right:15px;
+
+    transition:.4s;
+}
+
+.primary-btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 0 35px rgba(37,99,235,.6);
+}
+
+.secondary-btn{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    color:white;
+
+    padding:16px 35px;
+
+    border-radius:12px;
+
+    border:1px solid rgba(255,255,255,.2);
+
+    backdrop-filter:blur(15px);
+
+    transition:.4s;
+}
+
+.secondary-btn:hover{
+
+    transform:translateY(-5px);
+
+    border-color:#38bdf8;
+}
+
+/* ==================================================
+   DASHBOARD CARD
+================================================== */
+
+.hero-right{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+}
+
+.dashboard-card{
+
+    width:450px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    backdrop-filter:blur(25px);
+
+    border-radius:30px;
+
+    padding:30px;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.4);
+
+    animation:float 5s ease-in-out infinite;
+
+    transition:.5s;
+
+    transform-style:preserve-3d;
+}
+
+.dashboard-card:hover{
+
+    transform:
+    rotateY(12deg)
+    rotateX(8deg)
+    scale(1.04);
+}
+
+.card-header{
+
+    font-size:24px;
+
+    font-weight:700;
+
+    margin-bottom:25px;
+}
+
+.stat-box{
+
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #0ea5e9
+    );
+
+    padding:25px;
+
+    border-radius:20px;
+
+    margin-bottom:25px;
+}
+
+.stat-box h2{
+
+    font-size:42px;
+
+    margin-bottom:8px;
+}
+
+.small-stats{
+
+    display:flex;
+
+    gap:15px;
+}
+
+.mini-card{
+
+    flex:1;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+.mini-card span{
+
+    margin-top:10px;
+
+    color:#38bdf8;
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-20px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
+/* ==================================================
+   STATS SECTION
+================================================== */
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+    padding:80px 8%;
+}
+
+.stat{
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    padding:40px;
+
+    text-align:center;
+
+    border-radius:20px;
+
+    transition:.4s;
+}
+
+.stat:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#38bdf8;
+}
+
+.stat h2{
+
+    color:#38bdf8;
+
+    font-size:42px;
+
+    margin-bottom:10px;
+}
+
+.stat p{
+
+    color:#cbd5e1;
+}
+
+/* ==================================================
+   FEATURES
+================================================== */
+
+.features{
+
+    padding:100px 8%;
+}
+
+.features h2{
+
+    text-align:center;
+
+    font-size:50px;
+
+    margin-bottom:60px;
+}
+
+.feature-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:30px;
+}
+
+.feature-card{
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    padding:35px;
+
+    border-radius:20px;
+
+    transition:.5s;
+}
+
+.feature-card:hover{
+
+    transform:
+    translateY(-15px)
+    rotateX(5deg);
+
+    border-color:#38bdf8;
+}
+
+.feature-card h3{
+
+    color:#38bdf8;
+
+    margin-bottom:15px;
+}
+
+.feature-card p{
+
+    color:#cbd5e1;
+
+    line-height:1.7;
+}
+
+/* ==================================================
+   CTA SECTION
+================================================== */
+
+.cta{
+
+    text-align:center;
+
+    padding:120px 8%;
+}
+
+.cta h2{
+
+    font-size:52px;
+
+    margin-bottom:20px;
+}
+
+.cta p{
+
+    color:#cbd5e1;
+
+    margin-bottom:35px;
+}
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+footer{
+
+    text-align:center;
+
+    padding:40px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    background:rgba(0,0,0,.2);
+}
+
+.footer-logo{
+
+    font-size:30px;
+
+    font-weight:800;
+
+    color:#38bdf8;
+
+    margin-bottom:10px;
+}
+
+footer p{
+
+    color:#94a3b8;
+}
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media(max-width:1100px){
+
+    .hero{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        padding-top:80px;
+    }
+
+    .hero-left h1{
+
+        font-size:50px;
+    }
+
+    .dashboard-card{
+
+        width:100%;
+        max-width:500px;
+    }
+}
+
+@media(max-width:768px){
+
+    .nav-links{
+
+        display:none;
+    }
+
+    .hero-left h1{
+
+        font-size:40px;
+    }
+
+    .features h2,
+    .cta h2{
+
+        font-size:36px;
+    }
+}
+/* ==================================================
+   AUTH BUTTONS (LOGIN + REGISTER)
+================================================== */
+
+.auth-buttons{
+    display:flex;
+    gap:15px;
+    align-items:center;
+}
+
+/* Register Button */
+.register-btn{
+    text-decoration:none;
+    color:white;
+
+    padding:12px 28px;
+    border-radius:12px;
+
+    border:1px solid rgba(56,189,248,.5);
+
+    background:transparent;
+
+    transition:.3s;
+}
+
+.register-btn:hover{
+    background:rgba(56,189,248,.15);
+    transform:translateY(-3px);
+    border-color:#38bdf8;
+}
+
+/* Login Button (kept your original style) */
+.login-btn{
+    text-decoration:none;
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:12px 28px;
+
+    border-radius:12px;
+
+    transition:.3s;
+}
+
+.login-btn:hover{
+    background:#1d4ed8;
+    transform:translateY(-3px);
+}
