@@ -1,0 +1,120 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#020617;
+    color:white;
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    padding:80px 20px 40px;
+}
+
+.hero h1{
+    font-size:42px;
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.hero p{
+    color:#cbd5e1;
+}
+
+/* FORM SECTION */
+.form-section{
+    display:flex;
+    justify-content:center;
+    padding:40px 20px;
+}
+
+.form-card{
+    width:400px;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    padding:30px;
+    border-radius:18px;
+    backdrop-filter:blur(15px);
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.form-card h2{
+    text-align:center;
+    color:#38bdf8;
+}
+
+.form-card input{
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    outline:none;
+}
+
+.form-card button{
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#2563eb;
+    color:white;
+    cursor:pointer;
+}
+
+.form-card button:hover{
+    background:#1d4ed8;
+}
+
+/* TABLE */
+.table-section{
+    padding:40px 8%;
+}
+
+.table-section h2{
+    margin-bottom:20px;
+    color:#38bdf8;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:rgba(255,255,255,0.05);
+    border-radius:12px;
+    overflow:hidden;
+}
+
+th, td{
+    padding:15px;
+    text-align:left;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+th{
+    color:#38bdf8;
+}
+
+td{
+    color:#cbd5e1;
+}
+
+button.action{
+    padding:6px 12px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.delete{
+    background:#ef4444;
+    color:white;
+}
+
+.edit{
+    background:#22c55e;
+    color:white;
+}

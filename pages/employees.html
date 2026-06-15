@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employees - EMS Pro</title>
+
+    <link rel="stylesheet" href="../css/employees.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <h1>Employee Management</h1>
+
+        <p>
+            Add, manage, and track all employees in your organization.
+        </p>
+
+    </section>
+
+    <!-- ADD EMPLOYEE FORM -->
+    <section class="form-section">
+
+        <div class="form-card">
+
+            <h2>Add New Employee</h2>
+
+            <input type="text" id="name" placeholder="Full Name">
+            <input type="email" id="email" placeholder="Email">
+            <input type="text" id="department" placeholder="Department">
+            <input type="text" id="position" placeholder="Position">
+
+            <button id="addBtn">Add Employee</button>
+
+        </div>
+
+    </section>
+
+    <!-- EMPLOYEE TABLE -->
+    <section class="table-section">
+
+        <h2>Employee List</h2>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Department</th>
+                    <th>Position</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="employeeTable">
+                <!-- Firebase data will appear here -->
+            </tbody>
+
+        </table>
+
+    </section>
+
+</body>
+
+</html>

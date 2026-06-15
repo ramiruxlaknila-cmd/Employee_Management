@@ -1,26 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>EMS Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMS Pro Dashboard</title>
 
-    <link rel="stylesheet"
-          href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-    <h1>Welcome To EMS Dashboard</h1>
+<div class="dashboard">
 
-    <button id="logoutBtn">
-        Logout
-    </button>
+    <!-- Sidebar -->
 
-    <script type="module"
-            src="../js/dashboard.js">
-    </script>
+    <aside class="sidebar">
+
+        <div class="logo">
+            EMS<span>Pro</span>
+        </div>
+
+        <ul class="menu">
+
+            <li class="active">Dashboard</li>
+            <li>Employees</li>
+            <li>Departments</li>
+            <li>Attendance</li>
+            <li>Payroll</li>
+            <li>Reports</li>
+            <li>Settings</li>
+
+        </ul>
+
+        <button id="logoutBtn" class="logout-btn">
+            Logout
+        </button>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <h1>Dashboard</h1>
+
+            <input
+            type="text"
+            placeholder="Search Employees..."
+            class="search">
+
+        </header>
+
+        <!-- Stats -->
+
+        <section class="cards">
+
+            <div class="card">
+                <h2>2458</h2>
+                <p>Total Employees</p>
+            </div>
+
+            <div class="card">
+                <h2>2321</h2>
+                <p>Active Employees</p>
+            </div>
+
+            <div class="card">
+                <h2>12</h2>
+                <p>Departments</p>
+            </div>
+
+            <div class="card">
+                <h2>$245K</h2>
+                <p>Payroll</p>
+            </div>
+
+        </section>
+
+        <!-- Employee Table -->
+
+        <section class="employee-section">
+
+            <h2>Recent Employees</h2>
+
+            <table>
+
+                <thead>
+
+                <tr>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Status</th>
+                </tr>
+
+                </thead>
+
+                <tbody>
+
+                <tr>
+                    <td>John Doe</td>
+                    <td>IT</td>
+                    <td>Active</td>
+                </tr>
+
+                <tr>
+                    <td>Sarah Smith</td>
+                    <td>HR</td>
+                    <td>Active</td>
+                </tr>
+
+                <tr>
+                    <td>Michael Brown</td>
+                    <td>Finance</td>
+                    <td>Leave</td>
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script type="module" src="../js/dashboard.js"></script>
 
 </body>
-
 </html>

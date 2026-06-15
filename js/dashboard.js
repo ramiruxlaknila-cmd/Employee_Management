@@ -1,34 +1,47 @@
-import { auth }
-from "./firebase-config.js";
+import { auth } from "./firebase-config.js";
 
 import {
-    signOut,
-    onAuthStateChanged
-}
-from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+    onAuthStateChanged,
+    signOut
+} from "firebase/auth";
 
 const logoutBtn =
 document.getElementById("logoutBtn");
 
-onAuthStateChanged(
-    auth,
-    (user)=>{
+/* =====================================
+   PROTECT DASHBOARD
+===================================== */
 
-        if(!user){
+onAuthStateChanged(auth, (user) => {
 
-            window.location.href =
-            "login.html";
-        }
+    if (!user) {
+
+        window.location.href =
+        "/pages/login.html";
     }
-);
+
+});
+
+/* =====================================
+   LOGOUT
+===================================== */
 
 logoutBtn.addEventListener(
     "click",
-    async ()=>{
+    async () => {
 
-        await signOut(auth);
+        try {
 
-        window.location.href =
-        "login.html";
+            await signOut(auth);
+
+            // Redirect to HOME page after logout
+            window.location.href =
+            "/index.html";
+
+        } catch (error) {
+
+            console.error(error);
+        }
+
     }
 );

@@ -1,27 +1,345 @@
-body{
+/* ==========================================
+   EMS PRO DASHBOARD
+========================================== */
 
-    background:#020617;
-
-    color:white;
-
-    text-align:center;
-
-    padding-top:100px;
-
-    font-family:Poppins,sans-serif;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
-button{
+body{
+    background:#020617;
+    color:white;
+    min-height:100vh;
+    overflow-x:hidden;
+}
 
-    margin-top:20px;
+/* ==========================================
+   BACKGROUND
+========================================== */
 
-    padding:15px 30px;
+body::before{
+    content:"";
+
+    position:fixed;
+
+    width:700px;
+    height:700px;
+
+    background:#2563eb;
+
+    border-radius:50%;
+
+    filter:blur(180px);
+
+    opacity:.18;
+
+    top:-250px;
+    left:-250px;
+
+    z-index:-1;
+}
+
+body::after{
+    content:"";
+
+    position:fixed;
+
+    width:700px;
+    height:700px;
+
+    background:#0ea5e9;
+
+    border-radius:50%;
+
+    filter:blur(180px);
+
+    opacity:.12;
+
+    bottom:-250px;
+    right:-250px;
+
+    z-index:-1;
+}
+
+/* ==========================================
+   LAYOUT
+========================================== */
+
+.dashboard{
+    display:flex;
+    min-height:100vh;
+}
+
+/* ==========================================
+   SIDEBAR
+========================================== */
+
+.sidebar{
+
+    width:280px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(25px);
+
+    border-right:1px solid rgba(255,255,255,.08);
+
+    padding:30px;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.logo{
+
+    font-size:32px;
+    font-weight:800;
+
+    margin-bottom:50px;
+}
+
+.logo span{
+    color:#38bdf8;
+}
+
+.menu{
+    list-style:none;
+    flex:1;
+}
+
+.menu li{
+
+    padding:18px 20px;
+
+    margin-bottom:10px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.menu li:hover{
+
+    background:rgba(37,99,235,.25);
+
+    transform:translateX(8px);
+}
+
+.menu .active{
+
+    background:#2563eb;
+}
+
+.logout-btn{
 
     border:none;
+
+    padding:15px;
+
+    border-radius:12px;
 
     background:#ef4444;
 
     color:white;
 
-    border-radius:10px;
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.logout-btn:hover{
+
+    transform:translateY(-3px);
+
+    background:#dc2626;
+}
+
+/* ==========================================
+   MAIN CONTENT
+========================================== */
+
+.main-content{
+
+    flex:1;
+
+    padding:40px;
+}
+
+/* ==========================================
+   TOP BAR
+========================================== */
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:40px;
+}
+
+.topbar h1{
+
+    font-size:36px;
+}
+
+.search{
+
+    width:300px;
+
+    padding:14px 20px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    outline:none;
+}
+
+.search::placeholder{
+    color:#94a3b8;
+}
+
+/* ==========================================
+   STATS CARDS
+========================================== */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+    margin-bottom:40px;
+}
+
+.card{
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    transition:.4s;
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#38bdf8;
+}
+
+.card h2{
+
+    font-size:42px;
+
+    color:#38bdf8;
+
+    margin-bottom:10px;
+}
+
+.card p{
+
+    color:#cbd5e1;
+}
+
+/* ==========================================
+   EMPLOYEE TABLE
+========================================== */
+
+.employee-section{
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:25px;
+
+    padding:30px;
+}
+
+.employee-section h2{
+
+    margin-bottom:25px;
+
+    font-size:28px;
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+}
+
+thead{
+
+    background:rgba(37,99,235,.2);
+}
+
+th{
+
+    padding:18px;
+
+    text-align:left;
+
+    color:#38bdf8;
+}
+
+td{
+
+    padding:18px;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+tr:hover{
+
+    background:rgba(255,255,255,.03);
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:900px){
+
+    .dashboard{
+        flex-direction:column;
+    }
+
+    .sidebar{
+        width:100%;
+    }
+
+    .topbar{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .search{
+        width:100%;
+    }
 }
